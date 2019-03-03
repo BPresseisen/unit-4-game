@@ -6,15 +6,6 @@
 //              the player and the The Glow Goal
 //
 var TGG = 0
-var c1 = 0
-var c2 = 0
-var c3 = 0
-var c4 = 0
-var cVal = 0
-var c1Val = 0
-var c2Val = 0
-var c3Val = 0
-var c4Val = 0
 var cArray = []
 var cArrayVal = 0
 var playerScore = 0
@@ -28,50 +19,85 @@ function gameStart(){
     alert("Welcome to the Crystal Collector game. Instructions and guidance appear on the left-hand side of the screen. Good luck collecting!");
 
     // generate TGG
-    TGG = Math.floor(Math.random() * 1000) + 1;
-    console.log(TGG);
+    TGG = 12 + (Math.floor(Math.random() * 119) -1);
+    console.log("goal number: ", TGG);
 
     // set the HTML to TGG
-    $("#TGG-score").text(TGG);
+    $(".TGG-score").text(TGG);
 
     // generate crystal numeric values and assign to each crystal HTML element's attribute
 
-    cArray = [c1Val, c2Val, c3Val, c4Val];
-    console.log(cArray);
+    cArray = [0,0,0,0];
+    console.log("crystal numbers: ", cArray);
  
-    for(i=0;i<cArray.lengthl;i++){
+    for(i=0; i < cArray.length; i++){
 
-        cArrayVal= Math.floor(Math.random() * 10) + 1;
-        console.log(cArrayVal)
-        console.log("-----")
+        cArrayVal = Math.floor(Math.random() * 11) + 1;
+        console.log("one crystal value: ", cArrayVal);
 
-        // swtich (cArray[i])
-
-        //     case c1Val
-        //         $(".c1").attr=c1Val
-        //     case c2Val
-        //         $(".c2").attr=c2Val
-        //     case c3Val
-        //         $(".c3").attr=c3Val
-        //     case v4Val
-        //         $(".c4").attr=c4Val
+        cArray[i]=cArrayVal;
+        console.log(cArrayVal);
+        console.log("-----");
     };
-
+    
+    // $(".c1").attribute(cArray[0]);
+    // console.log("c1 is: "+ cArray[0]);
+    // console.log("------")
+    // console.log($(".c1")[0]);
 
 };
 
 gameStart();
 
-// function gamePlay(){
+$("#c1").on("click",function(){
+    playerScore = playerScore + cArray[0];
+    console.log("the playerScore is : " + playerScore);
+});
 
-//  the onclick events per crystal
-//  for each onclick with the array of crystals, assign attribute the c_Val
-//  running sum for the playerScore
-//  if then to compare playerScore vs TGG
-//  if playerScore < TGG, gamePlay() continues
-//  if playerScore > TGG, prompt with the "You lost. click OK to play again"...capture playAgain value
-    //  if playAgain = True gameStart() else ... pop-up picture of Skekung
-//  if playerScore = TGG, alert with "YOU ARE THE GOAL GLOW"...show pic from joyous/victory pic from The Dark Crystal
-    //  if playAgain = True gameStart() else ... pop-up picture of Skekung
+$("#c2").on("click",function(){
+    playerScore = playerScore + cArray[1];
+    console.log("the playerScore is : " + playerScore);
+});
 
-// gameplay();
+$("#c3").on("click",function(){
+    playerScore = playerScore + cArray[2];
+    console.log("the playerScore is : " + playerScore);
+});
+
+$("#c4").on("click",function(){
+    playerScore = playerScore + cArray[3];
+    console.log("the playerScore is : " + playerScore);
+});
+
+$(".PLAYER-score").text(playerScore);
+
+if(playerScore > TGG){
+
+    TGG_wins=TGG_wins++
+    $(".TGG-wins_total").text(TGG_wins);
+    playAgain=prompt("Your score exceeded TGG. Click 'OK' to play again or 'Cancel' to gaze at this loss with wanton eyes.");
+
+    if(playAgain===1){
+
+        playerScore=0;
+        $(".PLAYER-score").text(playerScore);
+        gameStart();
+
+    };
+   
+}else if(playerScore=TGG && TGG !== 0 && playerScore !== 0){
+
+    player_wins=player_wins++
+    $(".PLAYER-wins_total").text(player_wins);
+    playAgain=prompt("Your scored THE GLOW GOAL!! Click 'OK' to play again or 'Cancel' if you're crystal collecting days are done.");
+
+    if(playAgain===1){
+
+        playerScore=0;
+        $(".PLAYER-score").text(playerScore);
+        gameStart();
+
+    };
+};
+
+
