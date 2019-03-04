@@ -39,65 +39,79 @@ function gameStart(){
         console.log(cArrayVal);
         console.log("-----");
     };
-    
-    // $(".c1").attribute(cArray[0]);
-    // console.log("c1 is: "+ cArray[0]);
-    // console.log("------")
-    // console.log($(".c1")[0]);
 
 };
 
 gameStart();
 
-$("#c1").on("click",function(){
+// function gamePlay(){
+
+    $(".c1").on("click",function(){
     playerScore = playerScore + cArray[0];
     console.log("the playerScore is : " + playerScore);
-});
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
 
-$("#c2").on("click",function(){
+    $(".c2").on("click",function(){
     playerScore = playerScore + cArray[1];
     console.log("the playerScore is : " + playerScore);
-});
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
 
-$("#c3").on("click",function(){
+    $(".c3").on("click",function(){
     playerScore = playerScore + cArray[2];
     console.log("the playerScore is : " + playerScore);
-});
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
 
-$("#c4").on("click",function(){
+    $(".c4").on("click",function(){
     playerScore = playerScore + cArray[3];
     console.log("the playerScore is : " + playerScore);
-});
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
+// };
 
-$(".PLAYER-score").text(playerScore);
+// gamePlay();
 
-if(playerScore > TGG){
+function gameEval(){
 
-    TGG_wins=TGG_wins++
-    $(".TGG-wins_total").text(TGG_wins);
-    playAgain=prompt("Your score exceeded TGG. Click 'OK' to play again or 'Cancel' to gaze at this loss with wanton eyes.");
+    if(playerScore > TGG){
+        console.log("The playerScore is: "+ playerScore);
+        console.log("The TGG is: "+ TGG);
+        TGG_wins=TGG_wins++
+        $(".TGG-wins_total").text(TGG_wins);
+        
+        playAgain=confirm("Your score exceeded TGG. Click 'OK' to play again or 'Cancel' to gaze at this loss with wanton eyes.");
+        console.log(playAgain);
+        if(playAgain===true){
+            playerScore=0;
+            $(".PLAYER-score").text(playerScore);
+            gameStart();
 
-    if(playAgain===1){
-
-        playerScore=0;
-        $(".PLAYER-score").text(playerScore);
-        gameStart();
-
-    };
+        };
    
-}else if(playerScore=TGG && TGG !== 0 && playerScore !== 0){
+    }else if(playerScore===TGG && TGG !== 0 && playerScore !== 0){
+        console.log("The playerScore is: "+ playerScore);
+        console.log("The TGG is: "+ TGG);
+        player_wins=player_wins++
+        $(".PLAYER-wins_total").text(player_wins);
+        playAgain=confirm("Your scored THE GLOW GOAL!! Click 'OK' to play again or 'Cancel' if you're crystal collecting days are done.");
+        console.log(playAgain);
 
-    player_wins=player_wins++
-    $(".PLAYER-wins_total").text(player_wins);
-    playAgain=prompt("Your scored THE GLOW GOAL!! Click 'OK' to play again or 'Cancel' if you're crystal collecting days are done.");
+        if(playAgain===true){
 
-    if(playAgain===1){
+            playerScore=0;
+            $(".PLAYER-score").text(playerScore);
+            gameStart();
 
-        playerScore=0;
-        $(".PLAYER-score").text(playerScore);
-        gameStart();
+        };
 
+    }else{
+        // gamePlay();
     };
 };
-
 
