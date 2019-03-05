@@ -44,39 +44,6 @@ function gameStart(){
 
 gameStart();
 
-// function gamePlay(){
-
-    $(".c1").on("click",function(){
-    playerScore = playerScore + cArray[0];
-    console.log("the playerScore is : " + playerScore);
-    $(".PLAYER-score").text(playerScore);
-    gameEval();
-    });
-
-    $(".c2").on("click",function(){
-    playerScore = playerScore + cArray[1];
-    console.log("the playerScore is : " + playerScore);
-    $(".PLAYER-score").text(playerScore);
-    gameEval();
-    });
-
-    $(".c3").on("click",function(){
-    playerScore = playerScore + cArray[2];
-    console.log("the playerScore is : " + playerScore);
-    $(".PLAYER-score").text(playerScore);
-    gameEval();
-    });
-
-    $(".c4").on("click",function(){
-    playerScore = playerScore + cArray[3];
-    console.log("the playerScore is : " + playerScore);
-    $(".PLAYER-score").text(playerScore);
-    gameEval();
-    });
-// };
-
-// gamePlay();
-
 function gameEval(){
 
     if(playerScore > TGG){
@@ -111,7 +78,35 @@ function gameEval(){
         };
 
     }else{
-        // gamePlay();
+        
     };
 };
+
+$(".c1").on("click",function(){
+    playerScore = playerScore + cArray[0];
+    console.log("the playerScore is : " + playerScore);
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
+
+    $(".c2").on("click",function(){
+    playerScore = playerScore + cArray[1];
+    console.log("the playerScore is : " + playerScore);
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
+
+    $(".c3").on("click",function(){
+    playerScore = playerScore + cArray[2];
+    console.log("the playerScore is : " + playerScore);
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
+
+    $(".c4").on("click",function(){
+    playerScore = playerScore + cArray[3];
+    console.log("the playerScore is : " + playerScore);
+    $(".PLAYER-score").text(playerScore);
+    gameEval();
+    });
 
