@@ -2,7 +2,7 @@
 
 This game is all about arithmetic, recogizing patterns and values. 
 
-Four crystals appear on screen. 
+Four (4) crystals appear on screen. 
 
 Each has an integer value assigned to it but is unknown to the user until they click on that particular crystal. 
 
@@ -15,6 +15,10 @@ Future development plans include the following mods:
 (1) greater mobile responsiveness (2) at the game's conclusion, there would be two resulting images drawn to the screen depending on the outcome: win or lose. These images have been identified and will be added this week (2019_April07) in time for this submission. If not, shortly thereafer.
 
 Here is the deployed link:
+
+https://bpresseisen.github.io/unit-4-game/.
+
+ABOUT THE DESIGN:
 
 
 
