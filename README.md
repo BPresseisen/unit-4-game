@@ -12,7 +12,7 @@ Like the values assigned to the crystals and are drawn to the screen during the 
 
 Future development plans include the following mods:
 
-(1) greater mobile responsiveness (2) refactorization of the called functions. At this point the called function is on each image's onClick even, thus not fullying utilizing the 'this' alias and assignment of a value from an stored attribute/data-value on the image and lastly at the game's conclusion; (3) there would be two resulting images drawn to the screen depending on the outcome: win or lose. These images have been identified and will be added this week (2019_April07) in time for this submission. If not, shortly thereafer.
+(1) greater mobile responsiveness (2) refactorization of the called functions. At this point the called function appears on each image's onClick event, thus not fullying utilizing the 'this' alias (scope-scalability). The assignment of a value from a stored attribute/data-value on an image is not optimized and should be assigned in a lone, called function. (3) Lastly at the game's conclusion, there would be two resulting images drawn to the screen depending on the outcome: win or lose. These images have been identified and will be added this week (2019_April07) in time for this submission. If not, shortly thereafer.
 
 Here is the deployed link:
 
